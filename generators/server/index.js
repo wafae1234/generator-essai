@@ -38,6 +38,7 @@ module.exports = class extends BaseGenerator {
     _generateAppCode(configOptions) {
         const mainJavaTemplates = [
             'ContactApplication.java',
+            'config/SecurityConfigurer.java',
             'rest/AccountRestController.java',
             'rest/AppRoleRestService.java',
             'rest/AppUserRestService.java',
