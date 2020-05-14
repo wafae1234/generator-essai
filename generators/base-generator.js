@@ -51,7 +51,7 @@ module.exports = class extends Generator {
         });
 
         this.fs.copyTpl(
-            this.templatePath(commonMavenConfigDir + 'gitignore'),
+            this.templatePath(commonMavenConfigDir + '.gitignore'),
             this.destinationPath('.gitignore')
             );
 
