@@ -50,13 +50,17 @@ module.exports = class extends Generator {
                 );
         });
 
+        this.fs.copyTpl(
+            this.templatePath(commonMavenConfigDir + 'gitignore'),
+            this.destinationPath('.gitignore')
+            );
+
         this.fs.copy(
             this.templatePath(commonMavenConfigDir+'.mvn'),
             this.destinationPath('.mvn')
             );
 
     }
-
     generateMavenPOMXml(configOptions) {
         const mavenConfigDir = 'maven/';
         this.fs.copyTpl(
@@ -65,10 +69,21 @@ module.exports = class extends Generator {
             configOptions
             );
     }
+
     generateMainJavaCode(configOptions, templates) {
         const mainJavaRootDir = 'src/main/java/';
         this._generateCode(configOptions, templates, 'app/', mainJavaRootDir, configOptions.packageFolder);
     }
+
+    generateMainResCode(configOptions, templates) {
+        const mainResRootDir = 'src/main/resources/';
+        this._generateCode(configOptions, templates, 'app/', mainResRootDir,'');
+    }
+
+    generateTestJavaCode(configOptions, templates) {
+        const testJavaRootDir = 'src/test/java/';
+        this._generateCode(configOptions, templates, 'app/', testJavaRootDir, configOptions.packageFolder);
+    } 
 
     generateFiles(configOptions, templates, srcRoot, baseFolder) {
         this._generateCode(configOptions, templates, srcRoot, baseFolder, '');

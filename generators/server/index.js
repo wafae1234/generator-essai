@@ -36,14 +36,48 @@ module.exports = class extends BaseGenerator {
     }
 
     _generateAppCode(configOptions) {
-        const mainJavaTemplates = ['ContactApplication.java'];
+        const mainJavaTemplates = [
+            'ContactApplication.java',
+            'rest/AccountRestController.java',
+            'rest/AppRoleRestService.java',
+            'rest/AppUserRestService.java',
+            'rest/AuditRestService.java',
+            'rest/PermissionRestService.java',
+
+            'security/AuthenticationRequest.java',
+            'security/AuthenticationResponse.java',
+            'security/JwtRequestFilter.java',
+            'security/JwtUtil.java',
+
+            'service/audit/AuditService.java',
+            'service/audit/AuditServiceImpl.java',
+            'service/audit/BeanUtil.java',
+            'service/audit/Operation.java',
+            'service/AccountService.java',
+            'service/AccountServiceImpl.java',
+            'service/MyUserDetailsService.java',
+            'service/PermissionService.java',
+            'service/PermissionServiceImpl.java',
+            'service/RegisterFormService.java',
+            'service/RegisterFormServiceImpl.java',
+            'service/RoleService.java',
+            'service/RoleServiceImpl.java',
+            'service/UserService.java',
+            'service/UserServiceImpl.java'
+
+        ];
         this.generateMainJavaCode(configOptions, mainJavaTemplates);
 
-        //const mainResTemplates = ['application.properties'];
-        //this.generateMainResCode(configOptions, mainResTemplates);
+        const mainResTemplates = [
+            'application.properties'
+        ];
+        this.generateMainResCode(configOptions, mainResTemplates);
 
-        //const testJavaTemplates = ['ConfigServerApplicationTests.java'];
-        //this.generateTestJavaCode(configOptions, testJavaTemplates);
+        const testJavaTemplates = [
+            'AuditTest.java',
+            'ContactApplicationTests.java'
+        ];
+        this.generateTestJavaCode(configOptions, testJavaTemplates);
     }
 
 };
