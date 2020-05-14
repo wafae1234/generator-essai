@@ -15,7 +15,15 @@ Then generate your new project:
 ```bash
 yo essai
 ```
+## Local Development Setup
 
+```bash
+git clone https://github.com/wafae1234/generator-essai.git
+cd generator-essai
+npm install
+npm link
+yo essai
+```
 ## Getting To Know Yeoman
 
  * Yeoman has a heart of gold.
