@@ -42,7 +42,7 @@
   "dependencies": {
     "yeoman-generator": "^2.0.1",
     "chalk": "^2.1.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "yosay": "^2.0.1"
   },
   "jest": {
